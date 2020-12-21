@@ -1,6 +1,6 @@
 # Vars
 	HISTFILE=~/.zsh_history
-	SAVEHIST=1000 
+	SAVEHIST=100000
 	setopt inc_append_history # To save every command before it is executed 
 	setopt share_history # setopt inc_append_history
 
@@ -53,6 +53,7 @@ done
 
 compinit
 
+source ~/.bashrc
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/key-bindings.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/completion.zsh

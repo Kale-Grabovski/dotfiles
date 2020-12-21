@@ -1,4 +1,5 @@
 " General Vim settings
+    :imap jj <Esc>
 	syntax on
 	let mapleader=","
 	set autoindent
