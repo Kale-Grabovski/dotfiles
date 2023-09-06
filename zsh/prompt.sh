@@ -13,14 +13,14 @@ set_prompt() {
 	PS1+="%{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}"
 
  	# Git
- 	if git rev-parse --is-inside-work-tree 2> /dev/null | grep -q 'true' ; then
- 		PS1+=', '
- 		PS1+="%{$fg[magenta]%}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%{$reset_color%}"
-		STATUS=$(git status --short | wc -l)
-		if [ $STATUS -gt 0 ]; then 
- 			PS1+="%{$fg[green]%}+$(echo $STATUS | awk '{$1=$1};1')%{$reset_color%}"
- 		fi
- 	fi
+ 	#if git rev-parse --is-inside-work-tree 2> /dev/null | grep -q 'true' ; then
+ #		PS1+=', '
+ #		PS1+="%{$fg[magenta]%}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%{$reset_color%}"
+#		STATUS=$(git status --short | wc -l)
+#		if [ $STATUS -gt 0 ]; then 
+# 			PS1+="%{$fg[green]%}+$(echo $STATUS | awk '{$1=$1};1')%{$reset_color%}"
+# 		fi
+# 	fi
 
 	# ]
 	PS1+="]: "
