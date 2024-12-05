@@ -80,4 +80,5 @@ source ~/dotfiles/zsh/prompt.sh
 export PATH=$PATH:$HOME/dotfiles/utils
 
 source ~/dotfiles/zsh/lockbook.sh
+source ~/dotfiles/zsh/takoe.sh
 #sh ~/dotfiles/tmux/tmux-start.sh
