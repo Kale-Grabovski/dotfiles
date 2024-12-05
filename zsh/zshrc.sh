@@ -81,4 +81,5 @@ export PATH=$PATH:$HOME/dotfiles/utils
 
 source ~/dotfiles/zsh/lockbook.sh
 source ~/dotfiles/zsh/takoe.sh
+#eval "$(starship init zsh)"
 #sh ~/dotfiles/tmux/tmux-start.sh

@@ -78,6 +78,8 @@ check_for_software tmux
 echo
 check_for_software xclip
 echo
+check_for_software guake
+echo
 
 check_default_shell
 
@@ -91,6 +93,7 @@ if echo "$answer" | grep -iq "^y" ;then
 	mv ~/.zshrc ~/.zshrc.old
 	mv ~/.tmux.conf ~/.tmux.conf.old
 	mv ~/.vimrc ~/.vimrc.old
+	dconf dump /apps/guake/ > $HOME/guake.dconf.old
 else
 	echo -e "\nNot backing up old dotfiles."
 fi
@@ -98,6 +101,8 @@ fi
 printf "source '$HOME/dotfiles/zsh/zshrc_manager.sh'" > ~/.zshrc
 printf "so $HOME/dotfiles/vim/vimrc.vim" > ~/.vimrc
 printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
+
+dconf load /apps/guake/ < $HOME/dotfiles/guake.dconf
 
 echo
 echo "Please log out and log back in for default shell to be initialized."
