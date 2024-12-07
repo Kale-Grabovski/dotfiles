@@ -81,16 +81,18 @@ Plugins include:
 
 ### Keybindings
 
-| Key Stroke | What It Does                                                                              |
-| ---------- | ------------------------------------------------------------------------------------------|
+| Key Stroke | What It Does                                                                |
+|------------|-----------------------------------------------------------------------------|
 | Ctrl-H     | Goes to the root of a git project, runs `cd $(git rev-parse --show-toplevel || echo ".")` |
-| Ctrl-K     | Runs `cd ..`                                                                              |
-| Ctrl-G     | Runs `git add -A; git commit -v && git push`                                              |
-| Ctrl-V     | Runs `fc`. Takes last command and puts it in a vim buffer.                                |
-| Ctrl-S     | Adds `sudo` to the beginning of the buffer.                                               |
-| Ctrl-L     | Runs `ls`.                                                                                |
-| Ctrl-O     | Equivalent to hitting `Enter`.                                                            |
-| Ctrl-P     | Equivalent to pressing `Up Arrow`.                                                        |
+| Ctrl-K     | Runs `cd ..`                                                                |
+| Ctrl-G     | Runs `git add -A; git commit -v && git push`                                |
+| Ctrl-V     | Runs `fc`. Takes last command and puts it in a vim buffer.                  |
+| Ctrl-S     | Adds `sudo` to the beginning of the buffer.                                 |
+| Ctrl-L     | Runs `ls`.                                                                  |
+| Ctrl-O     | Equivalent to hitting `Enter`.                                              |
+| Ctrl-P     | Equivalent to pressing `Up Arrow`.                                          |
+| `+Esc      | Run vim mode                                                                |
+| Esc        | Run vim mode for currently typing command                                   |
 
 ### Plugins
 
@@ -105,14 +107,16 @@ Plugins include:
 
 ## [Tmux](https://en.wikipedia.org/wiki/Tmux)
 
-- Use `prefix + Ctrl + s` to save current layout (tmux-resurrect), and `prefix + Ctrl + r` to
-  restore. Auto save interval is 10m by default and could be changed at tmux.conf.local
+- Use `prefix + Ctrl + s` to save current layout (tmux-resurrect), and `prefix + Ctrl + r` to restore.
+  Auto save interval is set to 10m by default and could be changed at tmux.conf.local
 - Ctrl-B has been remapped to the backtick character (&#96;). If you want to type the actual backtick character (&#96;)
   itself, just hit the key twice.
 - `%` has been remapped to `v`.
 - Use vim movement keys for moving between panes.
 - Copy buffer is copied to xclip.
 - Status bar tells you date, time, user, and hostname. Especially useful with nested ssh sessions.
+
+Colorful shit at the bottom and another settings are from here: https://github.com/gpakosz/.tmux
 
 ## Guake
 
