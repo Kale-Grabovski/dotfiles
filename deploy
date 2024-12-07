@@ -90,19 +90,35 @@ stty raw -echo
 answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
 stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
-	mv ~/.zshrc ~/.zshrc.old
-	mv ~/.tmux.conf ~/.tmux.conf.old
-	mv ~/.vimrc ~/.vimrc.old
-	dconf dump /apps/guake/ > $HOME/guake.dconf.old
+	mv ~/.zshrc ~/dotfiles/backups/.zshrc.old
+	mv ~/.tmux.conf ~/dotfiles/backups/.tmux.conf.old
+	mv ~/.tmux.conf.local ~/dotfiles/backups/.tmux.conf.local.old
+	mv ~/.vimrc ~/dotfiles/backups/.vimrc.old
+	dconf dump /apps/guake/ > $HOME/dotfiles/backups/guake.dconf.old
 else
 	echo -e "\nNot backing up old dotfiles."
 fi
 
+# zsh/vim/tmux
 printf "source '$HOME/dotfiles/zsh/zshrc_manager.sh'" > ~/.zshrc
 printf "so $HOME/dotfiles/vim/vimrc.vim" > ~/.vimrc
-printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
+ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/tmux/tmux.conf.local ~/.tmux.conf.local
 
+# guake
+sudo apt install guake -y
 dconf load /apps/guake/ < $HOME/dotfiles/guake.dconf
+
+# fd
+sudo apt install fd-find -y
+ln -s $(which fdfind) ~/.local/bin/fd
+
+# sd
+sudo apt install cargo -y
+cargo install sd
+
+# xh
+cargo install xh --locked
 
 echo
 echo "Please log out and log back in for default shell to be initialized."

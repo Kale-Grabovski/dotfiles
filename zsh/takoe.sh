@@ -1,3 +1,5 @@
+force_color_prompt=yes
+
 HISTSIZE=800000
 HISTFILESIZE=800000
 
@@ -29,6 +31,7 @@ alias tailf='tail -f $1'
 alias nlp="netstat -nlp | grep $1"
 alias geo='curl https://ipinfo.io/geo'
 alias sshad='ssh-add ~/.ssh/id_rsa'
+alias grep='grep --color=always'
 
 alias zzz='sh ~/dotfiles/zsh/zshrc_manager.sh'
 alias dark='xrandr --output eDP-1 --brightness $1'
