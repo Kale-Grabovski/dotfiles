@@ -11,10 +11,11 @@ export GOPATH=$HOME/go export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/usr/loca
 export GOBIN=$HOME/go/bin
 export EDITOR=vim
 
-alias goland="sh ~/Downloads/goland/bin/goland.sh &"
-alias rover="sh ~/Downloads/RustRover/bin/rustrover.sh &"
-alias phpstorm="sh ~/Downloads/phpstorm/bin/phpstorm.sh &"
-alias pycharm="sh ~/Downloads/pycharm/bin/pycharm.sh &"
+alias android="~/Downloads/android-studio/bin/studio &"
+alias goland="~/Downloads/goland/bin/goland &"
+alias rover="~/Downloads/RustRover/bin/rustrover &"
+alias phpstorm="~/Downloads/phpstorm/bin/phpstorm &"
+alias pycharm="~/Downloads/pycharm/bin/pycharm &"
 alias subl='~/sublime/sublime_text'
 
 alias ll='ls -alF'
