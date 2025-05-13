@@ -42,9 +42,12 @@ alias d='docker'
 alias com='docker-compose'
 
 alias gs='git status'
+alias gb='git branch'
+alias gco='git checkout'
 alias gu='git pull origin master'
 alias gh='git push origin master'
 alias ga='git add .'
 alias gl='git log --pretty=oneline'
+alias gcp='git cherry-pick'
 alias pushall='git add . && git commit -am xxx && git push origin master'
 
