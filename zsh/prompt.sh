@@ -7,10 +7,10 @@ setopt PROMPT_SUBST
 set_prompt() {
 
 	# [
-	PS1="["
+	#PS1="["
 
 	# Path: http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
-	PS1+="%{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}"
+	#PS1+="%{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}"
 
  	# Git
  	#if git rev-parse --is-inside-work-tree 2> /dev/null | grep -q 'true' ; then
@@ -23,7 +23,7 @@ set_prompt() {
 # 	fi
 
 	# ]
-	PS1+="]: "
+	#PS1+="]: "
 }
 
 precmd_functions+=set_prompt
