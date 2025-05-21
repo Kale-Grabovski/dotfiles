@@ -5,8 +5,9 @@ alias dotpush="cd ~/dotfiles && ga && git commit -am poh && gh && cd -"
 source ~/projects/kube-ps1/kube-ps1.sh
 #zinit light jonmosco/kube-ps1
 PROMPT="$(kube_ps1)"$PROMPT
-PS1='%n@ozon %1~\$ '
-PS1="$(kube_ps1)%{$(tput bold)$(tput setaf 2)%}$PS1%{$(tput sgr0)%}"
+#PS1='%n@ozon %1~\$ '
+PS1='%1~\$ '
+PS1="$(kube_ps1) %{$(tput bold)$(tput setaf 2)%}$PS1%{$(tput sgr0)%}"
 
 PATH=$PATH:~/go/bin
 GONOPROXY=''
@@ -35,8 +36,8 @@ export VAULT_ADDR="https://vault.s.o3.ru:8200"
 
 go env -w GOPROXY="https://goproxy.s.o3.ru" && go env -w GOSUMDB=off
 
-alias collector="cd ~/projects/collector && export $(grep -v '^#' .collector.env 2> /dev/null | xargs) && sleep 1 && go run cmd/collector/main.go --config=scout-collector-config.yaml --metrics-addr=:8882"
-alias agent="cd ~/projects/collector && export $(grep -v '^#' .agent.env 2> /dev/null | xargs) && sleep 1 && go run cmd/collector/main.go --config=scout-agent-config.yaml --metrics-addr=:8881"
-alias pproxy="cd ~/projects/query-proxy && export $(grep -v '^#' .env 2> /dev/null | xargs) && sleep 1 && go run cmd/main.go"
-alias testtrace="cd ~/projects/tested-traced-app && export $(grep -v '^#' .env 2> /dev/null | xargs) && sleep 1 && go run cmd/main.go"
+alias collector="cd ~/projects/collector && export $(grep -v '^#' .collector.env 2> /dev/null | xargs) && go run cmd/collector/main.go --config=scout-collector-config.yaml --metrics-addr=:8882"
+alias agent="cd ~/projects/collector && export $(grep -v '^#' .agent.env 2> /dev/null | xargs) && go run cmd/collector/main.go --config=scout-agent-config.yaml --metrics-addr=:8881"
+alias pproxy="cd ~/projects/query-proxy && export $(grep -v '^#' .env 2> /dev/null | xargs) && go run cmd/main.go"
+alias testtrace="cd ~/projects/tested-traced-app && export $(grep -v '^#' .env 2> /dev/null | xargs) && go run cmd/main.go"
 
