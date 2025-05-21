@@ -53,3 +53,11 @@
 	}
 	zle -N git_root
 	bindkey "^h" git_root
+
+# MacOS
+
+bindkey "˙" backward-word
+bindkey "3D" backward-word
+bindkey "¬" forward-word
+bindkey "3C" forward-word
+
