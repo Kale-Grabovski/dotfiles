@@ -15,6 +15,7 @@ GONOSUMDB=''
 GOPRIVATE=''
 GOPROXY='https://goproxy.s.o3.ru'
 GOSUMDB='off'
+export GOROOT="$(brew --prefix golang)/libexec"
 
 JAEGER_SERVICE_NAME=scout-collector
 JAEGER_AGENT_HOST=localhost
@@ -31,6 +32,7 @@ alias kx=kubectx
 alias ks='kubens'
 alias colimastart="colima start --profile ozon --cpu 2 --disk 60"
 alias colimastop="colima stop ozon"
+alias hs='history 0 | grep -i $1'
 
 export VAULT_ADDR="https://vault.s.o3.ru:8200"
 
