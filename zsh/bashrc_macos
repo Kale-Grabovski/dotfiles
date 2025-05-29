@@ -15,7 +15,7 @@ GONOSUMDB=''
 GOPRIVATE=''
 GOPROXY='https://goproxy.s.o3.ru'
 GOSUMDB='off'
-export GOROOT="$(brew --prefix golang)/libexec"
+GOROOT="$(brew --prefix golang)/libexec"
 
 JAEGER_SERVICE_NAME=scout-collector
 JAEGER_AGENT_HOST=localhost
@@ -38,8 +38,8 @@ export VAULT_ADDR="https://vault.s.o3.ru:8200"
 
 go env -w GOPROXY="https://goproxy.s.o3.ru" && go env -w GOSUMDB=off
 
-alias collector="cd ~/projects/collector && export $(grep -v '^#' .collector.env 2> /dev/null | xargs) && go run cmd/collector/main.go --config=scout-collector-config.yaml --metrics-addr=:8882"
-alias agent="cd ~/projects/collector && export $(grep -v '^#' .agent.env 2> /dev/null | xargs) && go run cmd/collector/main.go --config=scout-agent-config.yaml --metrics-addr=:8881"
-alias pproxy="cd ~/projects/query-proxy && export $(grep -v '^#' .env 2> /dev/null | xargs) && go run cmd/main.go"
-alias testtrace="cd ~/projects/tested-traced-app && export $(grep -v '^#' .env 2> /dev/null | xargs) && go run cmd/main.go"
+alias collector="cd ~/projects/collector && export $(grep -v '^#' ~/projects/collector/.collector.env 2> /dev/null | xargs) && go run cmd/collector/main.go --config=scout-collector-config.yaml --metrics-addr=:8882"
+alias agent="cd ~/projects/collector && export $(grep -v '^#' ~/projects/collector/.agent.env 2> /dev/null | xargs) && go run cmd/collector/main.go --config=scout-agent-config.yaml --metrics-addr=:8881"
+alias pproxy="cd ~/projects/query-proxy && export $(grep -v '^#' ~/projects/query-proxy/.env 2> /dev/null | xargs) && go run cmd/main.go"
+alias testtrace="cd ~/projects/tested-traced-app && export $(grep -v '^#' ~/projects/tested-traced-app/.env 2> /dev/null | xargs) && go run cmd/main.go"
 
