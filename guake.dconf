@@ -38,7 +38,9 @@ clipboard-paste='<Alt>v'
 close-tab='<Alt>w'
 new-tab='<Alt>t'
 next-tab='<Alt>Right'
-previous-tab='<Alt>Left'
+next-tab-alt='<Alt>bracketright'
+previous-tab='<Alt>bracketleft'
+previous-tab-alt='<Alt>Left'
 
 [style/background]
 transparency=94
