@@ -12,6 +12,7 @@ export GOBIN=$HOME/go/bin
 export EDITOR=vim
 
 alias android="~/Downloads/android-studio/bin/studio &"
+alias idea="~/Downloads/idea/bin/idea &"
 alias goland="~/Downloads/goland/bin/goland &"
 alias rover="~/Downloads/RustRover/bin/rustrover &"
 alias phpstorm="~/Downloads/phpstorm/bin/phpstorm &"
