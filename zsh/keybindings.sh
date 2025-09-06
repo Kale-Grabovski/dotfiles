@@ -60,4 +60,5 @@ bindkey "˙" backward-word
 bindkey "3D" backward-word
 bindkey "¬" forward-word
 bindkey "3C" forward-word
+bindkey '^P' up-line-or-history
 

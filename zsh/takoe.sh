@@ -29,7 +29,7 @@ alias bss='vim ~/dotfiles/zsh/takoe.sh'
 alias hosts="sudo vim /etc/hosts"
 alias sss="source ~/dotfiles/zsh/zshrc_manager.sh && source ~/.bashrc"
 alias tailf='tail -f $1'
-alias nlp="netstat -nl | grep $1"
+alias nlp="netstat -tulpn | grep $1"
 alias geo='curl https://ipinfo.io/geo'
 alias sshad='ssh-add ~/.ssh/id_rsa'
 alias grep='grep --color=always -i'
